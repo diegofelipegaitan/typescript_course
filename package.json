@@ -1,0 +1,24 @@
+{
+  "name": "typescript_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegofelipegaitan/typescript_course.git"
+  },
+  "author": "Diego Gaitán",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegofelipegaitan/typescript_course/issues"
+  },
+  "homepage": "https://github.com/diegofelipegaitan/typescript_course#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0",
+    "typescript": "^2.7.2"
+  }
+}
