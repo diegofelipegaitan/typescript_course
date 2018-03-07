@@ -1,2 +1,4 @@
 {
+    "tslint.configFile": ".",
+    "typescript.tsc.autoDetect": "watch"
 }
