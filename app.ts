@@ -4,7 +4,7 @@ type bankAccount = {
 
 let bankAccountObject: bankAccount = {
     money: 2000,
-    deposit: function (value: number) {
+    deposit: function (value: number): void {
         this.money += value
     }
 };
