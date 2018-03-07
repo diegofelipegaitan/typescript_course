@@ -15,18 +15,48 @@ enum Family {
     Coquito
 };
 let MyFamily: Family = Family.Coquito;
-console.log(MyFamily);
-
-
-// functions
-function returnMyName(): void {
-    console.log(MyMane);
-}
-
 
 // function arguments
-function multiply(number1 : number, number2 : number): number {
+function multiply(number1: number, number2: number): number {
     return number1 * number2;
 }
 
-console.log(multiply(5, 2));
+let MyMultyply: (a: number, b: number) => number;
+MyMultyply = multiply;
+
+// objects
+let UserData: { name: String, age: number };
+
+UserData = {
+    age: 32,
+    name: "Diego"
+};
+
+// complex object
+let ComplexObject: { data: number[], output: (all: boolean) => number[] };
+ComplexObject = {
+    data: [1, 2, 3],
+    output: function (all: boolean) { return this.data }
+};
+
+// type alias
+type Complex = { data: number[], output: (all: boolean) => number[] };
+
+let ComplexObject2: Complex = {
+    data: [1, 3, 3],
+    output: function (all: boolean) { return this.data }
+};
+
+// Union Types
+let RealAge: number | string = 27;
+RealAge = "27";
+
+// Never Type
+function NeverTyper(): never {
+    throw new Error('test');
+}
+// NeverTyper();
+
+// Nullable Types
+let CanBeNull: number | null = 12;
+CanBeNull = null;
