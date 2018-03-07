@@ -1,13 +1,14 @@
 "use strict";
-var bankAccount = {
+var bankAccountObject = {
     money: 2000,
     deposit: function (value) {
         this.money += value;
     }
 };
-var myself = {
+var myself;
+myself = {
     name: "Max",
-    bankAccount: bankAccount,
+    bankAccount: bankAccountObject,
     hobbies: ["Sports", "Cooking"]
 };
 myself.bankAccount.deposit(3000);

@@ -1,13 +1,21 @@
-let bankAccount = {
+type bankAccount = {
+    money: number, deposit: (value: number) => void
+};
+
+let bankAccountObject: bankAccount = {
     money: 2000,
-    deposit(value) {
-        this.money += value;
+    deposit: function (value: number) {
+        this.money += value
     }
 };
 
-let myself = {
+let myself: {
+    name: string, bankAccount: bankAccount, hobbies: string[]
+};
+
+myself = {
     name: "Max",
-    bankAccount: bankAccount,
+    bankAccount: bankAccountObject,
     hobbies: ["Sports", "Cooking"]
 };
 
