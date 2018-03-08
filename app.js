@@ -59,3 +59,20 @@ console.log(countDown());
 var numbers = [1, 65, 3, -2, 4];
 console.log(Math.max(1, 54, 32 - 4));
 console.log(Math.max.apply(Math, numbers));
+function makeArray() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return args;
+}
+console.log(makeArray(2, 3, 4, 66));
+var numbersArray = [1, 2];
+var n1 = numbersArray[0], n2 = numbersArray[1];
+console.log(n1, n2);
+var userData = { MyName: 'Diego', age: 36 };
+var newName = userData.MyName, newAge = userData.age;
+console.log(newName, newAge);
+var miNombre = "Diego";
+var saludo = "Hola \nSoy " + miNombre;
+console.log(saludo);

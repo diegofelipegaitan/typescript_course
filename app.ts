@@ -54,3 +54,27 @@ console.log(countDown());
 let numbers = [1, 65, 3, -2, 4];
 console.log(Math.max(1, 54, 32 - 4));
 console.log(Math.max(...numbers));
+
+function makeArray(...args: number[]) {
+    return args;
+}
+console.log(makeArray( 2 , 3 , 4 , 66 ) );
+
+//Destructuring Array
+const numbersArray = [1,2];
+const [n1 ,n2 ] = numbersArray;
+console.log( n1, n2 );
+
+// Destructuring Objects
+const userData = { MyName : 'Diego' , age : 36}
+const {MyName: newName , age: newAge } = userData;
+console.log( newName , newAge );
+
+// Templates Literals
+const miNombre = "Diego";
+
+const saludo = `Hola 
+Soy ${miNombre}`;
+
+console.log( saludo );
+
