@@ -77,3 +77,30 @@ class Helpers {
 
 console.log(Helpers.PI);
 console.log(Helpers.calCirc(2.453));
+
+abstract class Project {
+
+    projectName: string = "Angular Project";
+    numberHours: number = 5;
+
+    calHours(days: number): number {
+        return this.numberHours * days;
+    }
+
+    abstract chancheName(name: string): void;
+
+}
+
+class IpPoject extends Project {
+
+    chancheName( name : string ){
+        this.projectName = name;
+    }
+
+}
+
+const myProject = new IpPoject();
+console.log(myProject);
+myProject.chancheName( "NEW" );
+console.log( myProject.projectName );
+console.log( myProject.calHours( 5 ) );
