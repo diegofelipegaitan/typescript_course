@@ -76,3 +76,14 @@ var plant = new Plant();
 console.log(plant.species);
 plant.species = "NEW ONE";
 console.log(plant.species);
+var Helpers = (function () {
+    function Helpers() {
+    }
+    Helpers.calCirc = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.1415;
+    return Helpers;
+}());
+console.log(Helpers.PI);
+console.log(Helpers.calCirc(2.453));

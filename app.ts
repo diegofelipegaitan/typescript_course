@@ -60,7 +60,20 @@ class Plant {
     }
 
 }
+
 const plant = new Plant();
 console.log(plant.species);
 plant.species = "NEW ONE";
 console.log(plant.species);
+
+class Helpers {
+    static PI: number = 3.1415;
+
+    static calCirc(diameter: number): number {
+        return this.PI * diameter;
+    }
+
+}
+
+console.log(Helpers.PI);
+console.log(Helpers.calCirc(2.453));
