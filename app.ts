@@ -30,3 +30,37 @@ class Person {
 const person = new Person("Diego", "proimond");
 person.$typePerson = "Diego";
 console.log(person);
+
+
+class Diego extends Person {
+    name = "Felipe;";
+
+    constructor(username: string) {
+        super('5555', username);
+    }
+
+}
+
+const diego = new Diego("proimond81");
+diego.$age = 36;
+diego.$typePerson = "nice";
+diego.printAge();
+console.log("Diego");
+
+class Plant {
+
+    private _species: string = "Algo";
+
+    public get species(): string {
+        return `Hey, i'm a ${this._species}`;
+    }
+
+    public set species(value: string) {
+        this._species = value;
+    }
+
+}
+const plant = new Plant();
+console.log(plant.species);
+plant.species = "NEW ONE";
+console.log(plant.species);
