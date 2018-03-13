@@ -93,7 +93,7 @@ abstract class Project {
 
 class IpPoject extends Project {
 
-    chancheName( name : string ){
+    chancheName(name: string) {
         this.projectName = name;
     }
 
@@ -101,6 +101,24 @@ class IpPoject extends Project {
 
 const myProject = new IpPoject();
 console.log(myProject);
-myProject.chancheName( "NEW" );
-console.log( myProject.projectName );
-console.log( myProject.calHours( 5 ) );
+myProject.chancheName("NEW");
+console.log(myProject.projectName);
+console.log(myProject.calHours(5));
+
+class OnlyOne {
+
+    private static instance: OnlyOne;
+
+    private constructor(public name: string) { }
+
+    static getInstance() {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('Only One');
+        }
+        return OnlyOne.instance;
+    }
+
+}
+
+let onlyOne = OnlyOne.getInstance();
+console.log(onlyOne);

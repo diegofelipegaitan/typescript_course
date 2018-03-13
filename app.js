@@ -112,3 +112,17 @@ console.log(myProject);
 myProject.chancheName("NEW");
 console.log(myProject.projectName);
 console.log(myProject.calHours(5));
+var OnlyOne = (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('Only One');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+var onlyOne = OnlyOne.getInstance();
+console.log(onlyOne);
