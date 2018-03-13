@@ -11,18 +11,8 @@ var __extends = (this && this.__extends) || (function () {
 var Car = (function () {
     function Car(name) {
         this.name = name;
-        this._acceleration = 0;
+        this.acceleration = 0;
     }
-    Object.defineProperty(Car.prototype, "acceleration", {
-        get: function () {
-            return this._acceleration;
-        },
-        set: function (value) {
-            this._acceleration = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Car.prototype.honk = function () {
         console.log("Toooooooooot!");
     };
@@ -59,3 +49,25 @@ var Rectangle = (function (_super) {
 }(BaseObject));
 var rectangle = new Rectangle(5, 3);
 console.log(rectangle.calcSize());
+var Person = (function () {
+    function Person() {
+        this._firstName = "";
+    }
+    Object.defineProperty(Person.prototype, "firstName", {
+        get: function () {
+            return this._firstName;
+        },
+        set: function (value) {
+            this._firstName = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Person;
+}());
+var person = new Person();
+console.log(person.firstName);
+person.firstName = "Ma";
+console.log(person.firstName);
+person.firstName = "Maximilian";
+console.log(person.firstName);
