@@ -109,7 +109,7 @@ class OnlyOne {
 
     private static instance: OnlyOne;
 
-    private constructor(public name: string) { }
+    private constructor(public /* readonly para variables de solo lectura */ readonly name: string) { }
 
     static getInstance() {
         if (!OnlyOne.instance) {
