@@ -1,14 +1,14 @@
 // Exercise 1 - How was your TypeScript Class?
 class Car {
-
-	public get acceleration(): number  {
-		return this._acceleration;
-	}
-
-	public set acceleration(value: number ) {
-		this._acceleration = value;
-	}
     private _acceleration: number = 0;
+
+    public get acceleration(): number {
+        return this._acceleration;
+    }
+
+    public set acceleration(value: number) {
+        this._acceleration = value;
+    }
 
     constructor(public name: string) {
     }
@@ -17,10 +17,11 @@ class Car {
         console.log("Toooooooooot!");
     };
 
-    accelerate = function (speed) {
+    accelerate (speed) {
         this.acceleration = this.acceleration + speed;
     }
 }
+
 var car = new Car("BMW");
 car.honk();
 console.log(car.acceleration);
@@ -30,20 +31,27 @@ car.accelerate(10);
 console.log(car.acceleration);
 
 
-/*
+
 // Exercise 2 - Two objects, based on each other ...
-var baseObject = {
-    width: 0,
-    length: 0
-};
-var rectangle = Object.create(baseObject);
-rectangle.width = 5;
-rectangle.length = 2;
-rectangle.calcSize = function () {
-    return this.width * this.length;
-};
+class BaseObject {
+    constructor(public width: number = 0, public length: number = 0) { }
+
+    calcSize = () => this.width * this.length;
+
+}
+
+class Rectangle extends BaseObject {
+
+    constructor(width, length) {
+        super(width, length);
+    }
+
+}
+
+let rectangle = new Rectangle(5, 3);
 console.log(rectangle.calcSize());
 
+/*
 // Exercise 3 - Make sure to compile to ES5 (set the target in tsconfig.json)
 var person = {
     _firstName: ""
