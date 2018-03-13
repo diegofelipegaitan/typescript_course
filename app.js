@@ -27,27 +27,25 @@ car.honk();
 console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
-car.accelerate(10);
-console.log(car.acceleration);
 var BaseObject = (function () {
     function BaseObject(width, length) {
         if (width === void 0) { width = 0; }
         if (length === void 0) { length = 0; }
-        var _this = this;
         this.width = width;
         this.length = length;
-        this.calcSize = function () { return _this.width * _this.length; };
     }
     return BaseObject;
 }());
 var Rectangle = (function (_super) {
     __extends(Rectangle, _super);
-    function Rectangle(width, length) {
-        return _super.call(this, width, length) || this;
+    function Rectangle() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.calcSize = function () { return _this.width * _this.length; };
+        return _this;
     }
     return Rectangle;
 }(BaseObject));
-var rectangle = new Rectangle(5, 3);
+var rectangle = new Rectangle(3, 3);
 console.log(rectangle.calcSize());
 var Person = (function () {
     function Person() {
@@ -58,7 +56,7 @@ var Person = (function () {
             return this._firstName;
         },
         set: function (value) {
-            this._firstName = value;
+            this._firstName = (value.length > 3) ? value : "";
         },
         enumerable: true,
         configurable: true
@@ -67,7 +65,7 @@ var Person = (function () {
 }());
 var person = new Person();
 console.log(person.firstName);
-person.firstName = "Ma";
+person.firstName = "Di";
 console.log(person.firstName);
-person.firstName = "Maximilian";
+person.firstName = "Diego";
 console.log(person.firstName);

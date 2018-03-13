@@ -8,7 +8,7 @@ class Car {
         console.log("Toooooooooot!");
     };
 
-    accelerate (speed) {
+    accelerate(speed) {
         this.acceleration = this.acceleration + speed;
     }
 }
@@ -18,45 +18,37 @@ car.honk();
 console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
-car.accelerate(10);
-console.log(car.acceleration);
 
 // Exercise 2 - Two objects, based on each other ...
 class BaseObject {
     constructor(public width: number = 0, public length: number = 0) { }
-
-    calcSize = () => this.width * this.length;
 }
 
 class Rectangle extends BaseObject {
-
-    constructor(width, length) {
-        super(width, length);
-    }
-
+    calcSize = () => this.width * this.length;
 }
 
-let rectangle = new Rectangle(5, 3);
+let rectangle = new Rectangle(3, 3);
 console.log(rectangle.calcSize());
 
 // Exercise 3 - Make sure to compile to ES5 (set the target in tsconfig.json)
-class Person{
+class Person {
 
     private _firstName: string = "";
 
-	public get firstName(): string  {
-		return this._firstName;
-	}
+    public get firstName(): string {
+        return this._firstName;
+    }
 
-	public set firstName(value: string ) {
-		this._firstName = value;
-	}
+    public set firstName(value: string) {
+        this._firstName = (value.length > 3) ? value : "";
+    }
 
 }
 
 let person = new Person();
 console.log(person.firstName);
-person.firstName = "Ma";
+person.firstName = "Di";
 console.log(person.firstName);
-person.firstName = "Maximilian";
+person.firstName = "Diego";
 console.log(person.firstName);
