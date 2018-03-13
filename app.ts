@@ -1,5 +1,47 @@
-const testVariable = "testing a text";
-console.log( testVariable );
+namespace MathOperations {
+    export class Algorithm {
+
+        readonly PI: number = 3.1415;
+        private static instance: Algorithm;
+
+        private constructor() { }
+
+        static getInstance() {
+            if (!Algorithm.instance) {
+                Algorithm.instance = new Algorithm();
+            }
+            return Algorithm.instance;
+        }
+
+        calculateCirc = (diameter: number): number => diameter * this.PI
+
+        calculateRectangule = (width: number, length: number): number => width * length
+
+    }
+}
+
+namespace NewMathOperations{
+    export class Algorithm {
+
+        readonly PI: number = 1415;
+        private static instance: Algorithm;
+
+        private constructor() { }
+
+        static getInstance() {
+            if (!Algorithm.instance) {
+                Algorithm.instance = new Algorithm();
+            }
+            return Algorithm.instance;
+        }
+
+    }
+}
+
+let algorithm = MathOperations.Algorithm.getInstance();
+let newAlgorithm = NewMathOperations.Algorithm.getInstance();
+
+console.log( algorithm.PI );
 
 
-
+console.log( newAlgorithm.PI );

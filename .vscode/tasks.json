@@ -23,5 +23,8 @@
                 "$eslint-stylish"
             ]
         }
+    ],
+    "problemMatchers": [
+        "$tsc-watch"
     ]
 }
