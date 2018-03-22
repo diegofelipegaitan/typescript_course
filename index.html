@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Typescript</title>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./assets/jspm.browser.js"></script>
+    <script src="./assets/jspm.config.js"></script>
+</head>
 </head>
 <body>
-    <script src="./assets/app.js"></script>
+    <script> 
+    SystemJS.import('./assets/app.js');
+    </script>
 </body>
 </html>
