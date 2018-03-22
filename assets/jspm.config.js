@@ -1,23 +1,23 @@
 SystemJS.config({
+    baseURL: "assets",
     transpiler: "ts",
     typescriptOptions: {
-        "module": "system",
-        "target": "es5",
-        "tsconfig": true,
-        "sourceMap": true
+      "module": "system",
+      "target": "es5",
+      "tsconfig": true,
+      "sourceMap": true
     },
-    packages: {
-        "./resources": {
-            "main": "app",
-            "defaultExtension": "ts",
-            "meta": {
-                "*.css": {
-                    "loader": "css"
-                },
-                "*.html": {
-                    "loader": "text"
-                }
-            }
-        }
+    packages: {  
+      "resources": {
+        "main": "index",
+        "defaultExtension": "ts"
+      },
+      "assets": {
+        "defaultExtension": "js"
+      }
+    },
+    paths: {
+      "github:": "../dependecies/jspm_packages/github/",
+      "npm:": "../dependecies/jspm_packages/npm/"
     }
-});
+  });
