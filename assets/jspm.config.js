@@ -9,10 +9,10 @@ SystemJS.config({
     },
     packages: {  
       "resources": {
-        "main": "index",
+        "main": "app",
         "defaultExtension": "ts"
       },
-      "assets": {
+      "": {
         "defaultExtension": "js"
       }
     },
