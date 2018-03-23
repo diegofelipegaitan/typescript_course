@@ -20,5 +20,20 @@
   "devDependencies": {
     "lite-server": "^2.3.0",
     "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "systemjs": "^0.21.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "assets",
+      "packages": "dependencies/jspm_packages"
+    },
+    "dependencies": {
+      "ts": "github:frankwallis/plugin-typescript@^9.0.0"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^2.0.7"
+    }
   }
 }
