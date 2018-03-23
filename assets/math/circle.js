@@ -15,3 +15,4 @@ var Circle = (function () {
     return Circle;
 }());
 exports.Circle = Circle;
+exports.PI = 3.1415;

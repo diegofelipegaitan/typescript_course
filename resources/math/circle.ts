@@ -15,3 +15,5 @@ export class Circle {
     calculateCirc = (diameter: number): number => diameter * this.PI
 
 }
+
+ export let PI = 3.1415
