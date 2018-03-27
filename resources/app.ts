@@ -30,3 +30,53 @@ let point3D = new Point3D(2, 3, 4)
 console.log(point3D);
 let point1 = point3D.add(new Point3D(2, 3, 4));
 console.log(point1);
+
+console.log("--- Static Classes ---");
+class Something {
+    static instances = 0;
+    constructor() {
+        Something.instances++;
+    }
+}
+
+var s1 = new Something();
+var s2 = new Something();
+console.log(Something.instances);
+
+/**
+ * 
+ * This class is about the class modifiers (Public, Protected and Private)
+ * @class FooBase
+ */
+class FooBase {
+    public x: number = 0;
+    private y: number = 0;
+    protected z: number = 0;
+
+    constructor() {
+        this.y = this.y;
+    }
+}
+
+// EFFECT ON INSTANCES
+var foo = new FooBase();
+foo.x; // okay
+// foo.y; // ERROR : private
+// foo.z; // ERROR : protected
+
+// EFFECT ON CHILD CLASSES
+class FooChild extends FooBase {
+    constructor() {
+        super();
+        this.x; // okay
+        // this.y; // ERROR: private
+        // this.z; // okay
+    }
+}
+
+console.log("--- Define using constructor ---");
+class Foo {
+    constructor(public x = 0) { }
+}
+console.log(new Foo());
+console.log(new Foo(2));

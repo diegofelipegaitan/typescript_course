@@ -36,3 +36,44 @@ var point3D = new Point3D(2, 3, 4);
 console.log(point3D);
 var point1 = point3D.add(new Point3D(2, 3, 4));
 console.log(point1);
+console.log("--- Static Classes ---");
+var Something = (function () {
+    function Something() {
+        Something.instances++;
+    }
+    Something.instances = 0;
+    return Something;
+}());
+var s1 = new Something();
+var s2 = new Something();
+console.log(Something.instances);
+var FooBase = (function () {
+    function FooBase() {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        this.y = this.y;
+    }
+    return FooBase;
+}());
+var foo = new FooBase();
+foo.x;
+var FooChild = (function (_super) {
+    __extends(FooChild, _super);
+    function FooChild() {
+        var _this = _super.call(this) || this;
+        _this.x;
+        return _this;
+    }
+    return FooChild;
+}(FooBase));
+console.log("--- Define using constructor ---");
+var Foo = (function () {
+    function Foo(x) {
+        if (x === void 0) { x = 0; }
+        this.x = x;
+    }
+    return Foo;
+}());
+console.log(new Foo());
+console.log(new Foo(2));
