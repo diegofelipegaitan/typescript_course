@@ -32,5 +32,28 @@ class Person {
     }
 }
 var person = new Person(1);
+
+/* 
 setTimeout(person.growOld, 10);
 setTimeout(function () { console.log(person.age); }, 20); // 2
+ */
+
+class Adder {
+    constructor(public a: number) { }
+    // This function is now safe to pass around
+    add = (b: number): number => this.a + b;
+}
+
+class ExtendedAdder extends Adder {
+    // Create a copy of parent before creating our own
+    private superAdd = this.add;
+    // Now create our override
+    add = (b: number): number => this.superAdd(b);
+}
+
+console.log("-- Arrow functions and inheritance ---" );
+let adder = new Adder(1);
+console.log(adder.add(2));
+
+let extendedAdder = new ExtendedAdder(2);
+console.log(extendedAdder.add(2));
