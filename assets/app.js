@@ -1,4 +1,5 @@
 "use strict";
+console.log('--- LET KEYWORD ---');
 var foo = 123;
 if (true) {
     var foo = 456;
@@ -43,3 +44,22 @@ for (var i = 0; i < 3; i++) {
 for (var j = 0; j < 3; j++) {
     funcs[j]();
 }
+console.log('--- const keyword ---');
+var bar = 123;
+var y = 0;
+if (y > 10) {
+}
+var maxRows = 10;
+if (y > maxRows) {
+}
+var foo2 = 123;
+if (true) {
+    var foo2_1 = 456;
+    console.log(foo2_1);
+}
+console.log(foo2);
+var foo_ = { bar: 123 };
+var foo1_ = { bar: 123 };
+console.log(foo1_);
+foo1_.bar = 456;
+console.log(foo1_);
