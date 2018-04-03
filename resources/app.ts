@@ -1,8 +1,12 @@
-function greet( person: {name: string}){
+interface NamePerson {
+    name: string
+}
+
+function greet( person: NamePerson){
     console.log("Hello " + person.name );
 }
 
-function changeName( person: { name: string}){
+function changeName( person: NamePerson){
     person.name = "Diego Felipe";
 }
 
