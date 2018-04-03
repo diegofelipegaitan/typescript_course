@@ -11,3 +11,13 @@ iTakeItAll('foo', 'bar', 'bas', 'qux'); // ['bas','qux']
 /**
  * Rest parameters can be used in any function be it function/()=>/class member.
  */
+
+ /** 
+  * Example by myself
+  */
+let a = (...someParameters: any[]) => {
+    console.log(someParameters);
+}
+a();
+a( 2 , 3 , "123" );
+
