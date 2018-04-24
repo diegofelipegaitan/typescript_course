@@ -29,3 +29,16 @@ var Person = (function () {
 var diego = new Person("Diego");
 console.log(diego);
 diego.greet("Gaitán");
+var myDoubleFunction;
+myDoubleFunction = function (value1, value2) {
+    return value1 * value2;
+};
+var oldPerson = {
+    age: 37,
+    name: "Diego Felipe",
+    greet: function (lastName) {
+        console.log("Diego Felipe " + lastName);
+    }
+};
+console.log(oldPerson);
+console.log(oldPerson.greet("Gaitán"));
