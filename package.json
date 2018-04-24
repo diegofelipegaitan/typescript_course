@@ -19,7 +19,7 @@
   "homepage": "https://github.com/diegofelipegaitan/typescript_course#readme",
   "devDependencies": {
     "lite-server": "^2.3.0",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.3"
   },
   "dependencies": {
     "systemjs": "^0.21.0"
