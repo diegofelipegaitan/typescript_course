@@ -10,10 +10,21 @@ function logged(constructorFn) {
 }
 var Person = (function () {
     function Person() {
-        console.log(1);
+        console.log(123);
     }
     Person = __decorate([
         logged
     ], Person);
     return Person;
+}());
+function logging(value) {
+    return value ? logged : false;
+}
+var Car = (function () {
+    function Car() {
+    }
+    Car = __decorate([
+        logging(true)
+    ], Car);
+    return Car;
 }());

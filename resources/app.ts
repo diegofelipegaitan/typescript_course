@@ -4,9 +4,20 @@ function logged(constructorFn: Function) {
 
 @logged
 class Person {
-
-    constructor() {
-        console.log(1);
+ 
+    constructor(){
+        console.log( 123 );
     }
+    
+}
+
+// Factory
+
+function logging(value: boolean) : any {
+    return value ? logged : false;
+}
+
+@logging( true )
+class Car {
 
 }
